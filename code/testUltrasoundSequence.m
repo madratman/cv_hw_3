@@ -3,7 +3,7 @@ rect=[255, 105, 310, 170];
 rects = zeros(size(frames,3),4);
 rects(1,:)=rect;
 
-for i=1:length(frames)-1
+for i=1:size(frames,3)-1
     It=frames(:,:,i);
     It1=frames(:,:,i+1);
     It=double(It);

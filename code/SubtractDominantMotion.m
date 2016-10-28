@@ -12,10 +12,11 @@ M = LucasKanadeAffine(image1, image2);
 image_warped = warpH(image1, M, [size(image2, 1), size(image2, 2)], NaN);
 image_warped(isnan(image_warped)) = 0;
 mask = abs(image2 - image_warped);
-thresh = graythresh(mask);
-mask = im2bw(mask, thresh);
+mask = mask>22;
+% thresh = graythresh(mask);
+% mask = im2bw(mask, thresh);
 SE = strel('disk', 8);
 mask = imdilate(mask, SE);
 mask = imerode(mask, SE);
-mask = mask - bwareaopen(mask, 500);
-imagesc(mask)
+mask = bwareaopen(mask, 90);
+% imagesc(mask)

@@ -22,4 +22,4 @@ for i=1:length(frames)-1
         saveas(gcf, strcat('sylv',int2str(i), '.png'));
     end
  end  
-save('../results/slyvseqrect.mat','rects');
+save('../results/slyvseqrect.mat','rect_bases');

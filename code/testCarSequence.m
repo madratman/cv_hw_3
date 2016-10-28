@@ -3,7 +3,7 @@ rect=[60, 117, 146, 152];
 rects = zeros(size(frames,3),4);
 rects(1,:)=rect;
 
-for i=1:length(frames)-1
+for i=1:size(frames,3)-1
     It=frames(:,:,i);
     It1=frames(:,:,i+1);
     It=double(It);
@@ -19,5 +19,5 @@ for i=1:length(frames)-1
         saveas(gcf, strcat('car',int2str(i), '.png'));
     end
 end
-save('../results/rcarseqrect.mat','rects');
+save('../results/carseqrect.mat','rects');
 close;
