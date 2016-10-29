@@ -16,5 +16,6 @@ for i=1:size(frames,3)-1
     if (i==5)|(i==25)|(i==50)|(i==75)|(i==100)
         saveas(gcf, strcat('usseqaffine',int2str(i),'.png'));
     end
+    axis off;
 end
 close

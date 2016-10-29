@@ -14,9 +14,9 @@ for i=1:length(frames)-1
     imshow(frames(:,:,i))
     hold on
     rectangle('Position',[rect_inv_comp(1),rect_inv_comp(2),...
-        rect_inv_comp(3)-rect_inv_comp(1),rect_inv_comp(4)-rect_inv_comp(2)],'EdgeColor','b'); 
+        rect_inv_comp(3)-rect_inv_comp(1),rect_inv_comp(4)-rect_inv_comp(2)],'EdgeColor','r','LineWidth',2); 
     rectangle('Position',[rect_bases(1),rect_bases(2),...
-        rect_bases(3)-rect_bases(1),rect_bases(4)-rect_bases(2)],'EdgeColor','r'); 
+        rect_bases(3)-rect_bases(1),rect_bases(4)-rect_bases(2)],'EdgeColor','g','LineWidth',2); 
     pause(0.01);     
     if (i==2)|(i==200)|(i==300)|(i==350)|(i==400)
         saveas(gcf, strcat('sylv',int2str(i), '.png'));

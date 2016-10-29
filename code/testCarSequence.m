@@ -13,11 +13,13 @@ for i=1:size(frames,3)-1
     rects(i+1,:)=rect;
     imagesc(It)
     hold on; 
-    rectangle('Position',[rect(1), rect(2), abs(rect(3)-rect(1)), abs(rect(2)-rect(4))]);
+    rectangle('Position',[rect(1), rect(2), abs(rect(3)-rect(1)), abs(rect(2)-rect(4))],...
+        'EdgeColor','r','LineWidth',3);
     pause(0.01);
     if i==2|i==100|i==200|i==300|i==400
         saveas(gcf, strcat('car',int2str(i), '.png'));
     end
+    axis off;
 end
 save('../results/carseqrect.mat','rects');
 close;
