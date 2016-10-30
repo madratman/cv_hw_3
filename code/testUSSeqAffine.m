@@ -24,8 +24,8 @@ for i=1:size(frames,3)-1
 
     padded_mask = [left_pad center_block right_pad];
 
-%     img_fused = imfuse(It, padded_mask);
-    img_fused = imfuse(It, curr_mask);
+    img_fused = imfuse(It, padded_mask);
+%     img_fused = imfuse(It, curr_mask);
 
     imshow(img_fused);
     pause(0.01)
