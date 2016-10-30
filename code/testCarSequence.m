@@ -21,5 +21,5 @@ for i=1:size(frames,3)-1
     end
     axis off;
 end
-save('../results/carseqrect.mat','rects');
+save('../results/carseqrects.mat','rects');
 close;

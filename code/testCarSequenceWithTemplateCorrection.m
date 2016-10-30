@@ -23,5 +23,5 @@ for i = 1:size(frames, 3)-1
     rects_all(i, :) = rect_temp_corr;
 end
 
-save('../results/carseqrects-wcrt.mat','rects_all');
+save('../results/carseqrects-wcr.mat','rects_all');
 close;

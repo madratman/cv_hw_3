@@ -5,7 +5,7 @@ rect_inv_comp = [102, 62, 156, 108];
 rects_all = zeros(size(frames,3),4);
 rects_all(1,:)=rect_bases;
 for i=1:length(frames)-1
-     i
+     i;
     [u_bases,v_bases]=LucasKanadeBasis(frames(:,:,i),frames(:,:,i+1),rect_bases,bases);
     [u_inv_comp,v_inv_comp]=LucasKanadeInverseCompositional(frames(:,:,i),frames(:,:,i+1),rect_inv_comp);
     rect_bases = rect_bases + [ u_bases v_bases u_bases v_bases];
@@ -22,4 +22,4 @@ for i=1:length(frames)-1
         saveas(gcf, strcat('sylv',int2str(i), '.png'));
     end
  end  
-save('../results/slyvseqrect.mat','rect_bases');
+save('../results/sylvseqrects.mat','rect_bases');
